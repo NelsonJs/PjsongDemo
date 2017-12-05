@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--该RelativeLayout是用来帮助滑出菜单定位的
+    因为需要从标题栏下面滑出，所以标题栏应当在菜单栏创建之后
+    再创建，否则，菜单将从标题栏上面滑过-->
+
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/rl_1"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bg_data"
+        android:layout_below="@id/rl_1"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_centerInParent="true"
+            android:text="该处放数据"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:visibility="gone"
+        android:id="@+id/bg"
+        style="@style/bg"/>
+    <!--将要滑出菜单-->
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rl_1"
+        android:background="#ffffff"
+        android:visibility="gone"
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="测试一"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/er"
+            android:text="测试er"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="测试san"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="测试si"
+            android:gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/iv"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/back"/>
+        <TextView
+            android:id="@+id/tv"
+            android:layout_centerHorizontal="true"
+            android:text="标题"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_below="@id/rl_1"
+        style="@style/Line1" />
+
+</RelativeLayout>
